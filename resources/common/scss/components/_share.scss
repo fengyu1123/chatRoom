@@ -1,0 +1,56 @@
+
+// 公共的分享页面
+.share {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0,0,0,0.3);
+
+    display: none;
+    &.active {
+        display: block;
+    }
+
+    &_inner {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background-color: #fff;
+    }
+    &_bd {
+        display: flex;
+        flex-wrap: wrap;
+
+        padding: rem(10) rem(15) rem(40);
+    }
+
+    &_item {
+        flex-shrink: 1;
+        flex-grow: 1;
+
+        width: rem(240);
+        padding-top: rem(50);
+
+        font-size: rem(28);
+        text-align: center;
+
+    }
+    &_icon {
+        display: block;
+        width: rem(100);
+        margin: 0 auto rem(14);
+    }
+    &_ft {
+        font-size: rem(32);
+        line-height: rem(100);
+        color: #b3b3b3;
+        text-align: center;
+
+        border-top: rem(10) solid #fafafa;
+    }
+}

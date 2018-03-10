@@ -1,0 +1,18 @@
+
+// 引导图
+.guide {
+    position: fixed;
+    z-index: 99999;
+    left: 50%;
+    bottom: rem(130*2);
+    transform: translateX(-50%);
+
+    width: rem(162*2);
+
+    transition: all ease .4s;
+
+    &.hide {
+        opacity: 0;
+        display: none;
+    }
+}

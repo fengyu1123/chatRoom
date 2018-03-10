@@ -1,0 +1,62 @@
+// 邀请
+.invite {
+    position: absolute;
+    z-index: 999;
+
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    transition: all ease .2s;
+    background-color: #ecedf1;
+
+    &.active {
+        display: block;
+    }
+
+    &_hd {
+        font-size: 12px;
+        margin-bottom: rem(6);
+        color: #666;
+    }
+    &_bd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_ft {
+    }
+
+    $h: 30px;
+    &_num {
+        color: #f5c43b;
+        font-size: $h;
+        //font-weight: bold;
+    }
+
+    &_copy {
+        display: inline-block;
+        margin-left: rem(20);
+        padding: 0 rem(15);
+        margin-right: -6em;
+
+        line-height: 22px;
+        font-size: 12px;
+        color: #333;
+
+        border: 1px solid #333;
+        border-radius: $h/2;
+    }
+
+    &_btn {
+        display: block;
+        width: rem(590);
+        margin: rem(50) auto;
+        line-height: rem(100);
+        font-size: 16px;
+
+        color: #fff;
+        border-radius: rem(50);
+        background-color: #6cc5ee;
+    }
+}

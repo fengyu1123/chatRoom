@@ -1,0 +1,135 @@
+
+// 章节分享页面的对话框
+%chat-2 {
+    padding-bottom: 7px;
+    .box {
+        display: inline-block;
+        max-width: rem(520);
+        //font-size: 14px;
+        &:after {
+            background-size: contain;
+            width: rem(30);
+            height: rem(36);
+        }
+
+    }
+    img {
+        max-width: rem(400);
+    }
+    .user {
+        //font-size: 13px;
+        color: #5c5c5d;
+    }
+
+}
+
+@mixin color-l {
+    background-color: #fff;
+    color: #333;
+}
+
+@mixin color-r {
+    background-color: #1a90f0;
+    color: #fff;
+}
+
+@mixin color-blank {
+    background-color: #dedede;
+    color: #333;
+}
+
+
+.chat-l-white {
+
+    @extend %chat-l;
+    @extend %chat-2;
+
+    .box {
+        @include color-l;
+
+        &:after {
+            background-image: url("/common/img/read_l.png");
+            left: rem(-26);
+        }
+    }
+}
+
+.chat-r-blue {
+
+    @extend %chat-r;
+    @extend %chat-2;
+
+    .box {
+
+        @include color-r;
+
+        &:after {
+            background-image: url("/common/img/read_r.png");
+            right: rem(-26);
+        }
+    }
+}
+.chat-blank-2 {
+    margin-top: rem(40);
+    flex-grow: 1;
+    text-align: center;
+    .box {
+
+        display: inline-block;
+        //margin-left: rem(110);
+        //margin-right: rem(110);
+
+        //font-size: 14px;
+        background-color: #dedede;
+    }
+}
+
+// 分支选项
+.chat-options {
+    position: fixed;
+    z-index: 999;
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+
+    background-color: #dedede;
+    display: flex;
+    padding: rem(20) rem(20) 0;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .chat-options_item {
+        flex-grow: 1;
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: rem(340);
+        min-height: rem(170);
+        padding: 5px;
+        margin: rem(10);
+
+        border-radius: rem(20);
+
+        background-color: #ecedf1;
+
+        &:nth-of-type(2n+1){
+            //margin-right: rem(20);
+        }
+
+        &-l {
+            @include color-l;
+        }
+
+        &-r {
+            @include color-r;
+        }
+    }
+
+}

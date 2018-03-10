@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+// 容器
+// 每列宽度
+@mixin col-width($size) {
+    -webkit-column-width: $size;
+       -moz-column-width: $size;
+            column-width: $size;
+}
+// 列数
+@mixin col-count($num) {
+    -webkit-column-count: $num;
+       -moz-column-count: $num;
+            column-count: $num;
+}
+// 列间距
+@mixin col-gap($size) {
+    -webkit-column-gap: $size;
+       -moz-column-gap: $size;
+            column-gap: $size;
+}
+// 列分割线样式
+@mixin col-boundary($border) {
+    -webkit-column-rule: $border;
+       -moz-column-rule: $border;
+            column-rule: $border;
+}
+// 列高适应
+@mixin col-fill($p) {
+    -webkit-column-fill: $p;
+       -moz-column-fill: $p;
+            column-fill: $p;
+}
+
+// 子元素
+// 元素是否横跨所有列
+@mixin col-span($p) {
+    -webkit-column-span: $p;
+       -moz-column-span: $p;
+            column-span: $p;
+}
+
+// 元素是否在指定位置断行
+// $pos: before after inside
+// 只有webkit兼容
+@mixin col-break($pos, $p) {
+    @if ($pos == 'before') {
+        -webkit-column-break-before: $p;
+    } @else if($pos == 'inside') {
+        -webkit-column-break-inside: $p;
+    } @else if($pos == 'after'){
+        -webkit-column-break-after: $p;
+    }
+
+}

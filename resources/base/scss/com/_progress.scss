@@ -1,0 +1,13 @@
+// 进度条
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    height: rem(6);
+    width: 100%;
+
+    &_inner {
+        height: 100%;
+        background-color: #6cc5ee;
+        transition: width linear .3s;
+    }
+}

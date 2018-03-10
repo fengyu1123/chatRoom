@@ -1,0 +1,73 @@
+// 模态框
+.toast {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &_inner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+
+        width: rem(540);
+        height: rem(640);
+
+        text-align: center;
+
+        background-color: #fff;
+        border-radius: rem(14);
+    }
+    &_close {
+        width: rem(26);
+        height: rem(26);
+        margin-top: rem(26);
+        margin-left: rem(26);
+
+        background-image: url("/common/img/close.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    &_logo {
+        width: rem(170);
+        height: rem(170);
+        margin-top: rem(28);
+        margin-bottom: rem(70);
+
+        font-size: 0;
+        border-radius: rem(28);
+    }
+    &_tt {
+        margin-bottom: rem(30);
+        font-size: rem(36);
+        color: #444;
+    }
+    &_bd {
+        font-size: rem(30);
+        color: #666;
+        margin-bottom: rem(40);
+    }
+    .downloadBtn {
+        $h: rem(74);
+        display: block;
+        margin: rem(50) auto;
+        width: rem(436);
+        height: $h;
+
+        line-height: $h;
+        font-size: rem(34);
+        color: #fff;
+        background-color: #6cc5ee;
+        border-radius: $h/2;
+    }
+}

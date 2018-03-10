@@ -1,0 +1,61 @@
+
+@import "./config";
+
+@import "../../common/scss/mixin";
+@import "../../common/scss/reset";
+@import "../../common/scss/rem";
+@import "../../common/scss/particle";
+
+@import "../../common/scss/components/share";
+@import "../../common/scss/components/chat";
+
+
+@import "./com/toast";
+@import "./com/invite";
+@import "./com/guide";
+//@import "./com/progress";
+@import "./com/chat";
+
+// 颗粒类
+html,body {
+    height: 100%;
+}
+body {
+    //height: 100vh;
+    background-color: #ecedf1;
+}
+[v-cloak] {
+    display: none;
+}
+
+.page {
+    min-height: 100vh;
+    //padding-bottom: 20vh;
+    //overflow: auto;
+    //-webkit-overflow-scrolling: touch;
+}
+.list {
+    position: relative;
+    padding-bottom: 30vh;
+
+    //background-origin: content-box;
+}
+// 动画处理
+$duration: .6s;
+.list_item {
+    background-color: #ecedf1;
+    position: relative;
+    z-index: 1;
+    &:not(:first-of-type){
+        //height: 0;
+        display: none;
+        opacity: 0;
+    }
+    &.active {
+        height: auto;
+        opacity: 1;
+        transition: opacity linear .5s;
+        transition-delay: .4s;
+        //animation: list_item $duration linear forwards ;
+    }
+}
