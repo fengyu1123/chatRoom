@@ -80,4 +80,69 @@
 <script src="http://img.duihua.doufu.la/clipboard/clipboard.min.js"></script>
 <script src="http://img.duihua.doufu.la/jquery/velocity.min.js"></script>
 <script type="text/javascript" src="http://duihua.doufu.la/assets/share/chapter.js"></script></body>
+<script type="text/javascript">
+	function websockets(){
+		var wsServer = 'ws://118.24.45.90:2000';
+		var websocket = new WebSocket(wsServer);
+		websocket.onopen = function (evt) {
+			console.log("Connected to WebSocket server.");
+		};
+
+		websocket.onclose = function (evt) {
+			console.log("Disconnected");
+		};
+
+		websocket.onmessage = function (evt) {
+			var jsonArr = JSON.parse(evt.data);
+			console.log(jsonArr);
+			appendHtml(jsonArr);
+		};
+
+		websocket.onerror = function (evt, e) {
+			console.log('Error occured: ' + evt.data);
+		};
+	}
+
+	function appendHtml(data){
+		console.log(data.name);
+		if(data.index ==1){
+			var html = '<li class="list_item" style="display: flex; opacity: 1;">\
+							<div data-index="1" class="chat-r-blue">\
+							<div class="chat_user">\
+								<div class="user">\
+									<div class="user_name">'+data.name+'</div>\
+									<img src="http://img.duihua.doufu.la/98/a0/956aba8bc19c0d6a2d8b1f0188.png" class="user_avatar">\
+								</div>\
+							</div>\
+							<div class="chat_box">\
+								<div class="box">\
+									'+data.msg+'\
+								</div>\
+							</div>\
+						</div>\
+					</li>';
+		}else{
+			var html = '<li class="list_item" style="display: flex; opacity: 1;">\
+							<div data-index="" class="chat-l-white">\
+							<div class="chat_user">\
+								<div class="user">\
+									<div class="user_name">'+data.name+'</div>\
+									<img src="http://img.duihua.doufu.la/98/a0/956aba8bc19c0d6a2d8b1f0188.png" class="user_avatar">\
+								</div>\
+							</div>\
+							<div class="chat_box">\
+								<div class="box">\
+									'+data.msg+'\
+								</div>\
+							</div>\
+						</div>\
+					</li>';
+		}
+		
+		$('.list').append(html);
+		var h = $(document).height()-$(window).height();
+         $(document).scrollTop(h);
+	}
+	setInterval("websockets()",5000);
+</script>
 </html>

@@ -16,8 +16,8 @@ class Push extends Controller{
     }   
 
     public function hello () {
-        $uid = $_GET['uid'];
-        session('uid', $uid);
+        //$uid = $_GET['uid'];
+        //session('uid', $uid);
 
         return $this->fetch();
     }
